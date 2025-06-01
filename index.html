@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoneyMarket Login</title>
+  <link rel="stylesheet" href="sebono.css" />
+</head>
+<body>
+
+  <div class="header">
+    Powered by Shoprite Group of Companies
+  </div>
+
+  <div class="logo">
+    <h1>MoneyMarket</h1>
+  </div>
+
+  <div class="container">
+    <h2>Login to your <br><strong>MoneyMarket account</strong></h2>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <input type="text" placeholder="e.g. 0821234567" required />
+        <div class="pin-boxes">
+          <input type="password" maxlength="1" required />
+          <input type="password" maxlength="1" required />
+          <input type="password" maxlength="1" required />
+          <input type="password" maxlength="1" required />
+          <input type="password" maxlength="1" required />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-login" id="loginBtn">Login</button>
+    </form>
+
+    <button class="btn btn-open">Open an account</button>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginBtn = document.getElementById('loginBtn');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent actual submission
+
+      // Simulate success
+      loginBtn.classList.add('btn-success');
+      loginBtn.textContent = "Success!";
+    });
+  </script>
+</body>
+</html>

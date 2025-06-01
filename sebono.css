@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e30613;
+  color: white;
+}
+
+.header {
+  background-color: #2f3440;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.logo {
+  text-align: center;
+  background: white;
+  padding: 15px;
+  color: #e30613;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 22px;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px auto;
+  display: block;
+  border: none;
+  border-radius: 5px;
+}
+
+.pin-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.pin-boxes input {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+.btn {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+  cursor: pointer;
+}
+
+.btn-login {
+  background-color: #ddd;
+  color: #999;
+}
+
+.btn-open {
+  background-color: white;
+  color: #e30613;
+  border: 2px solid white;
+}
+
+.btn-success {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
